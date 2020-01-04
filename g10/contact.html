@@ -1,0 +1,184 @@
+<!DOCTYPE=html>
+<html>
+
+
+
+<head>  
+     <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="restauraunt.css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Niramit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script type="text/Javascript" src="form.js"></script>
+    <title>Menu</title>
+    
+    
+    </head>
+<body>
+ <header>
+     <div class="center page-header"><h2>Fetticino's</h2><br> <h5>Opening a new Restauraunt in Washington Heights!</h5></div>
+    <hr>
+      </header>
+   <ul class= "nav nav-pills navPill">
+        <li> <a href="index.html"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+   <li ><a href="menu.html">Menu</a></li>
+    <li class="active"><a href="contact.html">Contact Us</a></li>
+ </ul>
+    <hr>
+    <div class="container contentColor">
+      
+        <div class="row">
+          
+                <div>
+                    <div class="col-lg-4 col-md-2 col-sm-2 col-xs-1" ></div>
+        <noscript  class="center">It seems you have javascript disabled. <br>This site is best viewed with javascript. </noscript>
+                    <!--Form start-->   
+ <form onsubmit="validateForm();" name="restForm" id=formWrapper class="col-lg-4 col-md-4 col-sm-8 col-xs-10">
+   <div class="form-group">
+     <label for="name" > Name:</label> 
+       <input type="text" name="name" >
+       </div>
+     <div class="form-group">
+         <Label for="email" >Email:</Label>  &nbsp;
+         <input type="text" name="email" ></div>
+     <div class="form-group">
+     <Label for="phone">Phone:</Label> 
+         <input type="text" name="phone" >
+     </div>
+     <div class="form-group">
+     <label for="reason">Reason for Inquiry:</label> &nbsp;
+         <select name="reason" >
+     <option value= "catering">Catering</option>
+     <option value= "private">Private Party</option>
+     <option value="Feedback">Feedback</option>
+     <option value="other">Other</option>
+     </select>
+     </div>
+     <div class="form-group">
+         <label for="information">Additional Information: </label>
+         <textarea rows="4" cols="40"name="information"></textarea></div>
+     <div class="form-group">
+     <label for="answer">Have you been to the restauraunt?</label>&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="answer" value="YES" checked />Yes&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="answer" value="NO" />No<br />
+     </div>
+     <div class="form-group">
+     <label for="day">Best day to contact you:</label>
+     <input type="checkbox" name="day" value="M">M &nbsp;&nbsp;&nbsp;
+     <input type="checkbox" name="day" value="T">T&nbsp;&nbsp;&nbsp;
+     <input type="checkbox" name="day" value="W">W&nbsp;&nbsp;&nbsp;
+     <input type="checkbox" name="day" value="Th">Th&nbsp;&nbsp;&nbsp;
+     <input type="checkbox" name="day" value="F">F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+     </div>
+     <input type="submit" value="Send Request">
+
+     
+     </form>
+                    
+                    <div class="col-lg-4 col-md-2 col-sm-3 col-xs-1"></div>
+            </div>
+    </div>
+    </div>
+   
+    <hr>
+    <footer>
+   <p class="center">46 Lory Lane, Elmsford, NY, 10523 <br>914-732-9002</p>
+    
+    </footer>
+    
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+    
+    </body>
+<script>
+    
+//search by form name & labels for elements
+function validateForm(){
+   
+     clearErrors();
+    var name = document.forms["restForm"]["name"].value;
+    var email = document.forms["restForm"]["email"].value;
+    var phone= document.forms["restForm"]["phone"].value;
+    console.log(checkEmail(email));
+    if (name == "" || alpha(name) ) {
+        alert("Name must be filled. There can be no numbers.");
+        document.forms["restForm"]["name"]
+           .parentElement.className = "form-group has-error";
+        document.forms["restForm"]["name"].focus();
+        return false;
+    }
+   if (email == "" || checkEmail(email)) {
+       alert("Email must be a valid email address");
+       document.forms["restForm"]["email"]
+          .parentElement.className = "form-group has-error"
+       document.forms["restForm"]["email"].focus();
+       return false;
+   }
+     if (phone == "" || checkPhone(phone)) {
+       alert("Phone number must be a valid phone number");
+       document.forms["restForm"]["phone"]
+          .parentElement.className = "form-group has-error"
+       document.forms["restForm"]["phone"].focus();
+       return false;
+   }
+ 
+   // We are returning false so that the form doesn't submit 
+   // and so that we can see the results
+   return false;
+    
+}
+
+function clearErrors() {    
+    for (var loopCounter = 0; 
+        loopCounter < document.forms["restForm"].elements.length; 
+        loopCounter++) {
+        if (document.forms["restForm"].elements[loopCounter]
+           .parentElement.className.indexOf("has-") != -1) {
+            
+            document.forms["restForm"].elements[loopCounter]
+               .parentElement.className = "form-group";
+        }
+    }    
+}
+    
+function alpha(inputtxt){
+    
+    const letters= /[a-zA-Z]+$/;
+    
+    if(inputtxt.match(letters)){
+        return false;
+    }else{
+        return true;
+    }
+    
+}
+    function checkEmail(inputtxt){
+        const expression= /\S+@\S+/
+       if(inputtxt.match(expression)){
+        return false;
+    }else{
+        return true;
+    }
+    }
+    function checkPhone(inputtxt){
+        const expression=/\d?(\s?|-?|\+?|\.?)((\(\d{1,4}\))|(\d{1,3})|\s?)(\s?|-?|\.?)((\(\d{1,3}\))|(\d{1,3})|\s?)(\s?|-?|\.?)((\(\d{1,3}\))|(\d{1,3})|\s?)(\s?|-?|\.?)\d{3}(-|\.|\s)\d{4}/
+        if(inputtxt.length>=10 && expression.exec(inputtxt)){
+            return false;
+           
+        }else{
+            return true;
+        }
+        
+    }
+    
+    </script>
+</html>

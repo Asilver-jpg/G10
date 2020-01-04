@@ -1,0 +1,139 @@
+<!DOCTYPE=html>
+
+<html>
+
+<head>
+     <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" type="text/css" />
+    <link href="restauraunt.css" rel="stylesheet" type="text/css">
+    <title>Lucky 7s</title>
+    
+    
+    </head>
+<body>
+    <h1 class="center">Luck Sevens... THE GAME</h1><br>
+    <!--- this one has an id center instead of class due to some bootsrap wackiness that overrides the class css when a letter is inputted for function num-->
+    <form onsubmit="runSeven();return false;" name="input" id="center">
+    <label for="bet">Starting Bet</label>
+        <input type="text" name="bet"><br>
+         <input type="submit" value="Play">
+        </form>
+       <br>
+        <br>
+        <div id="hide">
+        <hr>
+        
+        <h1 class="center" >Results</h1>
+        
+        <table id="resultsTable">
+        <tr>
+            <td>Starting Bet</td>
+            <td id="startBet"><p></p></td>
+            </tr>
+            <tr>
+            <td>Total Rolls Before Going Broke</td>
+            <td id="totalRoll"><p></p></td>
+            </tr>
+            <tr>
+            <td>Highest Amount Won</td>
+            <td id="highestAmount"><p></p></td>
+            </tr>
+            <tr>
+            <td>Roll Count at Highest Amount Win</td>
+            <td id="highestRoll"><p></p></td>
+            </tr>
+            <tr>
+            <td>Money Left</td>
+            <td id="moneyLeft"><p></p></td>
+            </tr>
+        </table>
+  
+    
+    
+</div>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+    
+    </body>
+
+    <script>
+        
+        var bestAmount=0;
+        var highestRollCount=0;
+    function runSeven(){
+//        
+        var rollCount=0;
+        var validate=true;
+        var highestAmount=0;
+        var startBet = document.forms["input"]["bet"].value;
+         var number = document.forms["input"]["bet"].value;
+         if (startBet == "" || num(startBet) ) {
+             
+             validate=false;
+        alert("A number must be inputted to start the game");
+        document.forms["input"]["bet"]
+           .parentElement.className = "form-group has-error";
+        document.forms["input"]["bet"].focus();
+        return false;
+    }if(validate != false){
+       
+        while(number>0){
+           
+            if(rollDice()){
+                rollCount++;
+                number= number+4;
+                if(number>highestAmount){
+                    highestAmount=number;
+                    console.log(rollCount);
+                   
+                }
+            }else{
+                rollCount++;
+                number=number-1;
+            }
+        }
+        document.getElementById("startBet").innerHTML= startBet;
+        document.getElementById("totalRoll").innerHTML= rollCount;
+        document.getElementById("moneyLeft").innerHTML= 0;
+       
+        if(highestAmount>bestAmount){
+         bestAmount=highestAmount;
+             highestRollCount=rollCount;
+        
+        }
+        document.getElementById("highestAmount").innerHTML= bestAmount
+        document.getElementById("highestRoll").innerHTML= highestRollCount;
+         document.getElementById("hide").style.visibility="visible";
+    }   
+    }
+        
+        function num(inputtxt){
+            const expression= /[0-9]+$/
+             if(inputtxt.match(expression)){
+                 return false;
+                }else{
+                    return true;
+                }
+        }
+    function rollDice(){
+            
+    var d1 = Math.floor(Math.random() * 6) + 1;
+    var d2 = Math.floor(Math.random() * 6) + 1;
+    var total= d1+d2;
+       
+    if(total==7){
+        
+        return true;
+    }else{
+        return false;
+    }
+        }
+    
+    
+    </script>
+
+
+</html>

@@ -1,0 +1,161 @@
+
+
+hr{
+    
+   border: 1px solid #7a0501;
+    margin:0;
+    
+}
+.menuItems{
+    text-align: center;
+    margin-top:20px;
+        margin-bottom:40px;
+    
+}
+.foodTitles{
+    
+    font-size:15px;
+    font-weight:bold;
+}
+.center{
+    text-align:center;
+    display:block;
+    
+}
+#center{
+    text-align:center;
+    display:block;
+    
+}
+#formWrapper
+{
+    margin-top: 0px;
+    display:inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 0
+    margin-top:40px;
+    height:500px;
+    padding-top: 40px;
+}
+#pizzaImage {
+   height:150px;
+    width:400px;
+    position:inline;
+    display:inline;
+    
+}
+
+#beverageTable{
+margin-left:75%;
+      font-family: 'Niramit', sans-serif;
+     border-collapse: collapse;
+    border-radius: 10px;
+     border: 2px solid #7a0501;
+     font-size:12px;
+    height:20px;
+}
+#beverageTable tr , #beverageTable td{
+   
+   background-color: #ffffff;
+   
+   padding-top:2px;
+    padding-bottom: 2px;
+    padding-left:5px;
+    padding-right:5px
+}
+
+
+#bottomForm{
+    margin-left=-100px;
+    
+}
+
+header{
+   font-family: 'Lobster', cursive;
+    
+}
+footer{
+  font-family: 'Niramit', sans-serif;
+    
+}
+
+p{
+    
+   font-family: 'Niramit', sans-serif;
+    margin:0;
+    padding:0;
+}
+img{
+ position:inline;
+ display:inline;   
+    
+}
+label{
+    font-family: 'Niramit', sans-serif;
+    font-size:16px;
+    font-weight:bold;
+}
+.contentColor{
+    background-color:beige;
+    height:75%;
+        width:100%;
+    
+}
+.menuColor{
+    background-color:aquamarine;
+    height:85%;
+        width:100%;
+    
+}
+a{
+    font-size:15px;
+    display:inline-block;
+    margin-bottom: 20px;
+    margin-top:20px;
+    color:#7a0501;
+    text-decoration:underline;
+       font-family: 'Niramit', sans-serif;
+}
+a:hover{
+    font-weight: bold;
+}
+
+a:visited{
+    color:#cd0067;
+}
+a:active{
+    text-decoration:none;
+}
+.nav-pills > li{
+    color:#7a0501 !important;
+}
+.itemDimensions{
+    height:150px;
+    padding-top:25px;
+    
+}
+#carouselMargin{
+    margin-bottom:20px;
+    
+}
+#hide{
+    visibility:hidden;
+}
+#resultsTable{
+   
+    margin-left:30%;
+    width:300px;
+    height:200px;
+    border-collapse: collapse;
+    
+}
+#resultsTable tr, #resultsTable th{
+border: 2px solid ;
+}
+
+#descriptionText{
+    font-size:15px;
+    font-weight: bold;
+}
