@@ -61,15 +61,16 @@
 
     <script>
         
-        var bestAmount=0;
-        var highestRollCount=0;
+       
+        
     function runSeven(){
-//        
+       var highestRollCount=0; 
         var rollCount=0;
         var validate=true;
         var highestAmount=0;
         var startBet = document.forms["input"]["bet"].value;
-         var number = document.forms["input"]["bet"].value;
+         var number = parseInt(document.forms["input"]["bet"].value);
+       
          if (startBet == "" || num(startBet) ) {
              
              validate=false;
@@ -81,30 +82,35 @@
     }if(validate != false){
        
         while(number>0){
+            if(rollCount==0){
+           
+            }else if(rollCount==1){
+               
+            }
            
             if(rollDice()){
                 rollCount++;
-                number= number+4;
-                if(number>highestAmount){
-                    highestAmount=number;
-                    console.log(rollCount);
+                number= number+4;      
                    
-                }
+                
             }else{
                 rollCount++;
                 number=number-1;
             }
+            if(number>highestAmount){
+                   
+                highestAmount=number;
+                highestRollCount=rollCount;
+            }
+          
         }
+      
         document.getElementById("startBet").innerHTML= startBet;
         document.getElementById("totalRoll").innerHTML= rollCount;
         document.getElementById("moneyLeft").innerHTML= 0;
        
-        if(highestAmount>bestAmount){
-         bestAmount=highestAmount;
-             highestRollCount=rollCount;
-        
-        }
-        document.getElementById("highestAmount").innerHTML= bestAmount
+      
+        document.getElementById("highestAmount").innerHTML= highestAmount
         document.getElementById("highestRoll").innerHTML= highestRollCount;
          document.getElementById("hide").style.visibility="visible";
     }   
